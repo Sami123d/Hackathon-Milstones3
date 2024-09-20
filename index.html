@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Dynamic Resume Builder</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Form to collect user data -->
+      <form id="resume-form">
+        <h2>Fill Your Information</h2>
+<!-- Profile Picture Upload Field in the Form -->
+<label for="profile-picture">Upload Profile Picture:</label>
+<input type="file" id="profile-picture" accept="image/*"><br>
+
+        <!-- Personal Information -->
+        <h3>Personal Information</h3>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" required><br>
+
+        <!-- Education Section -->
+        <h3>Education</h3>
+        <label for="education">Education:</label>
+        <input type="text" id="education" placeholder="Degree - Institution (Year)" required><br>
+
+        <!-- Experience Section -->
+        <h3>Work Experience</h3>
+        <label for="work">Work Experience:</label>
+        <input type="text" id="work" placeholder="Position - Company (Dates)" required><br>
+
+        <!-- Projects Section -->
+        <h3>Projects</h3>
+        <label for="projects">Projects (Comma Separated URLs):</label>
+        <input type="text" id="projects" placeholder="Project Title - URL" required><br>
+
+        <!-- Skills Section -->
+        <h3>Skills</h3>
+        <label for="skills">Skills (Comma Separated):</label>
+        <input type="text" id="skills" placeholder="HTML, CSS, JS" required><br>
+
+        <button type="submit">Generate Resume</button>
+      </form>
+
+      <!-- Dynamic Resume Output -->
+      <div id="resume-sec" style="display: none;"><header class="header"></header>
+        <img id="output-profile-picture" src="./default-profile.png" alt="Profile Picture">
+        <div class="personal-info">
+          <h1 id="output-name">Sami Ahmed</h1>
+          <p>Email: <a id="output-email" href="mailto:saminazirqureshi1@gmail.com">saminazirqureshi1@gmail.com</a> | Phone: <span id="output-phone">+92-314-2367196</span></p>
+        </div>
+      </header>
+
+      <section id="education-output">
+        <h2>Education</h2>
+        <ul>
+          <li id="output-education">BS in Computer Science - Sindh Madrsatul Islam University (2020 - 2024)</li>
+        </ul>
+      </section>
+
+      <section id="experience-output">
+        <h2>Experience</h2>
+        <ul>
+          <li id="output-work">Software Engineer Intern - FOLIO3 Pakistan (June 2024 - Aug 2024)</li>
+        </ul>
+      </section>
+
+      <section id="projects-output">
+        <h2>Projects</h2>
+        <ul id="output-projects">
+          <li><strong>Apple Clone</strong> - <a href="https://sami123d.github.io/apple-site/" target="_blank">Live Demo</a></li>
+        </ul>
+      </section>
+
+      <section id="skills-output">
+        <h2>Skills</h2>
+        <ul id="output-skills">
+          <li>HTML, CSS, JavaScript, TypeScript, Prisma, Bootstrap, Firebase</li>
+        </ul>
+        <button id="toggleSkillsBtn">Toggle Skills</button>
+      </section></div>
+    </div>
+
+    <script type="module" src="./src/app.ts"></script>
+  </body>
+</html>
